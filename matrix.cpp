@@ -96,6 +96,7 @@ void initializeMatrix(int(*arr)[COLS], int rows)
 		}
 	}
 }
+
 bool finish(int(*arr)[COLS], int rows) {
 	bool finish = false;
 	int count = 0;
@@ -120,7 +121,7 @@ void randomWalk(int(*arr)[COLS], int rows)
 	//모든 cell이 0 이상일 때 종료
 	//나방이 임의 장소 a[i][j][k] 선택은 I, j, k는 난수를 만들어 결정
 	// 배열 a[][][] 방식 사용 금지, 대신에 *만 사용
-	int x = rand() % 20, y = rand() % 30;
+	int x = rand() % ROWS, y = rand() % COLS;
 	*(*(arr + x) + y) += 1;
 	
 	while (finish(arr, rows) == false) {
@@ -184,9 +185,10 @@ void showMatrix(int *arr, int cols, int rows)
 	// high[0]에 대하여 2차원 배열 값 출력, high[1]에 대하여 2차원 배열 값 출력 등으로 처리
 	// 배열 a[][][] 방식 사용 금지, 대신에 *만 사용
 
+	int p = 0;
 	for (int i = 0; i < rows; i++) {
 		for (int j = 0; j < cols; j++) {
-			printf("[%5d] ", *(arr+j)+i );
+			printf("[%5d] ", *(arr + p++) );
 		}
 		cout << endl;
 	}

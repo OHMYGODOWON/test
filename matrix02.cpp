@@ -120,7 +120,7 @@ void randomWalk(int(*arr)[COLS], int rows)
 	//모든 cell이 0 이상일 때 종료
 	//나방이 임의 장소 a[i][j][k] 선택은 I, j, k는 난수를 만들어 결정
 	// 배열 a[][][] 방식 사용 금지, 대신에 *만 사용
-	int x = rand() % 20, y = rand() % 30;
+	int x = rand() % ROWS, y = rand() % COLS;
 	arr[x][y] += 1;
 
 	while (finish(arr, rows) == false) {

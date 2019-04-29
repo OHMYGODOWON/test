@@ -61,6 +61,27 @@ int main() {
 		}
 		cout << endl;
 	}
+	cout << endl;
+	cout << "*(p+j) + i" << endl;
+	int *p;
+	p = *arr;
+	num = 0;
+	for (int i = 0; i < 5; i++) {
+		for (int j = 0; j < 4; j++) {
+		printf("%d ", *(p + num++));
+		}
+		printf("\n");
+	}
 
+	num = 0;
+	cout << endl;
+	cout << "0으로 초기화" << endl;
+	for (int i = 0; i < 5; i++) {
+		for (int j = 0; j < 4; j++) {
+			*(*(a + i) + j) = 0;
+			printf("%d ", *(p + num++));
+		}
+		printf("\n");
+	}
 	system("pause");
 }
